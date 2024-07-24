@@ -1,6 +1,6 @@
 class Market{
 	
-	Market()
+	public Market()
 	{
 		System.out.println("created market");
 	}

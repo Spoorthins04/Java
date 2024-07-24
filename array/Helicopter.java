@@ -1,6 +1,6 @@
 class Helicopter{
 	
-	Helicopter()
+	public Helicopter()
 	{
 		System.out.println("created helicopter");
 	}

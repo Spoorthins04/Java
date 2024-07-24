@@ -1,6 +1,6 @@
 class Auto{
 	
-	Auto()
+	public Auto()
 	{
 		System.out.println("created Auto");
 	}
