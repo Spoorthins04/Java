@@ -5,7 +5,7 @@ class RupeeRunner
 	  System.out.print("Start main in RupeeRunner");
 	  
 	  Rupee rupee=new Rupee();
-	  int value=rupee.value;
+	  
 	  String shape=rupee.shape;
 	  float weight=rupee.weight;
 	  System.out.println("Rupee value:"+value);
