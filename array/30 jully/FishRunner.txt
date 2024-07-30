@@ -1,0 +1,21 @@
+class FishRunner
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Start main in FishRunner");
+		
+		Fish fish=new Fish("Golden");
+		
+		
+		Fish fish=new Fish("Anjal","Medium");
+		System.out.println("Fish name:"+fish.name);
+		System.out.println("Fish size:"+fish.size);
+		
+		Fish fish1=new Fish("Silver","Small");
+		System.out.println("Fish1 name:"+fish1.name);
+		System.out.println("Fish1 size:"+fish1.size);
+		
+		
+		System.out.println("End main in FishRunner");
+	}
+}
