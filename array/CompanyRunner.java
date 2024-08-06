@@ -1,8 +1,9 @@
-class CompanyRunner
-{
-  public static void main(String[] args)
-{
-  System.out.println("running a company runner");
-  DeliveryGuy.deliver("nike shoe");
-}
+class CompanyRunner{
+	
+	
+	public static void main(String[] args){
+		
+		Company company=new Company(109801,"Xworkz","Rajajinagar");
+		company.details();
+	}
 }

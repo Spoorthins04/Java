@@ -1,17 +1,25 @@
-class Country
-{
-	public static void main (String[]arg){
-		System.out.println("start states of india ");
-		String[]states={"karnataka","kerala","chennai","mumbai","tamilnadu"};
-		for(int states=0;states<5;states++)
-		{
-			int ref=states;
-			
-			System.out.println("states"+ref);
-		}
-		
-		System.out.println("end states of india");
+class Country{
+	
+	String name;
+	String continent;
+	State state=new State("kannada");
+	
+	
+	public Country(String name,String continent){
 		
 		
+		this.name=name;
+		this.continent=continent;
 	}
+	
+	public void show()
+	{
+		
+		System.out.println("country name:"+name);
+		System.out.println("country continent:"+continent);
+		state.show();
+	}
+	
+	
+	
 }
