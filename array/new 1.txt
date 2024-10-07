@@ -1,0 +1,13 @@
+public interface Ecom{
+void order(String item,int quantity);
+ }
+  Ecom ecom(String item,int quantity)->{
+  System.out.println ("running from ecom:"+item);
+  System.out.println("running from ecom:"+quantity);
+  };
+  
+public void orderFood(Foodapp foodapp){
+if(foodapp !=null){
+  foodapp.order("idli");
+}
+}
