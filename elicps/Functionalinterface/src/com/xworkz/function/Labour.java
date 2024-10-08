@@ -12,14 +12,5 @@ public class Labour {
 			System.out.println("starter is null");
 		}
 	}
-	
-	public void orderFood(Foodapp foodapp){
-		if(foodapp !=null){
-		  foodapp.order("idli");
-		}
-		
-	}
 
 }
-
-
