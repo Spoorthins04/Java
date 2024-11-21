@@ -1,6 +1,5 @@
 package com.xworkz.cafe.servlet;
 
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,11 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.cafe.service.CafeServiceImp;
 
-@WebServlet(loadOnStartup = 1, urlPatterns = "/delete")
-
-public class IdServlet extends HttpServlet {
-	public IdServlet() {
-		System.out.println("created no args IdServlet const");
+@WebServlet(loadOnStartup = 1, urlPatterns = "/list")
+public class ListServlet extends HttpServlet {
+	public ListServlet() {
+		System.out.println("created no args ListServlet const");
 	}
 
 	@Override
@@ -24,14 +22,15 @@ public class IdServlet extends HttpServlet {
 		String id = req.getParameter("id");
 		int convertedId = Integer.valueOf(id);
 		CafeServiceImp cafeServiceImp = new CafeServiceImp();
-		int ref = cafeServiceImp.deleteDataById(convertedId);
-		if (ref > 0) {
-			System.out.println("id is " + id);
-			req.setAttribute("success", "id " + id + " is deleted");
+		String ref = cafeServiceImp.getListById(convertedId);
+
+		if (ref != null) {
+			System.out.println(ref);
+			req.setAttribute("success", ref);
 		} else {
-			System.err.println("id not found");
-			req.setAttribute("failure", "id not deleted");
+			req.setAttribute("failure", "this id not present");
 		}
+
 		RequestDispatcher dispatcher = req.getRequestDispatcher("name.jsp");
 		dispatcher.forward(req, resp);
 	}

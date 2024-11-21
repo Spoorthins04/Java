@@ -1,12 +1,12 @@
 package com.xworkz.cafe.service;
 
 import com.xworkz.cafe.dto.CafeDTO;
+import com.xworkz.cafe.repo.CafeRepository;
 import com.xworkz.cafe.repo.CafeRepositoryImp;
 
 public class CafeServiceImp implements CafeService {
 
-	@Override
-	public boolean validate1(CafeDTO cafeDTO) {
+	public boolean validate(CafeDTO cafeDTO) {
 
 		boolean valid = true;
 		if (cafeDTO != null) {
@@ -73,7 +73,22 @@ public class CafeServiceImp implements CafeService {
 		return value;
 	}
 
-	public static boolean validate(CafeDTO cafeDTO) {
+	public String updateByEmail(String email) {
+
+		CafeRepositoryImp imp = new CafeRepositoryImp();
+		String value = imp.updateByEmail(email);
+		return value;
+	}
+
+	public String getListById(int id) {
+
+		CafeRepositoryImp imp = new CafeRepositoryImp();
+		String list = imp.getListById(id);
+		return list;
+	}
+
+	@Override
+	public boolean validate1(CafeDTO CafeDTO) {
 		// TODO Auto-generated method stub
 		return false;
 	}

@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.cafe.dto.CafeDTO;
-import com.xworkz.cafe.service.CafeServiceImp;
 import com.xworkz.cafe.service.CafeService;
+import com.xworkz.cafe.service.CafeServiceImp;
 
 @WebServlet(loadOnStartup = 1, urlPatterns = "/select")
 public class CafeServlet extends HttpServlet {
 
 	public CafeServlet() {
-		System.out.println("running no args InstituteServlet const");
+		System.out.println("running no args CafeServlet const");
 	}
 
 	int id = 1;
@@ -36,7 +36,7 @@ public class CafeServlet extends HttpServlet {
 		CafeDTO cafeDTO = new CafeDTO(name, email, password, convertedNumber, convertedAge, address, id);
 
 		CafeServiceImp cafeServiceImp = new CafeServiceImp();
-		boolean saved = CafeServiceImp.validate(cafeDTO);
+		boolean saved = cafeServiceImp.validate(cafeDTO);
 		if (saved) {
 			System.out.println("valid and saved ");
 			id = id + 1;

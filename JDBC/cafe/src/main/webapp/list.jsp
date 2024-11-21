@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>X-workz</title>
 </head>
 <body>
 <h3>${success}</h3>
 <h3>${failure}</h3>
-<form action="search" method="post">
-phone number<input type="text" name="phone">
-<button type="submit">search</button>
+<form action="list" method="post">
+Id<input type="text" name="id">
+<button type="Get">search</button>
 </form>
-
 </body>
 </html>

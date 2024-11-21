@@ -1,6 +1,5 @@
 package com.xworkz.cafe.servlet;
 
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -12,26 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.xworkz.cafe.service.CafeServiceImp;
 
-@WebServlet(loadOnStartup = 1, urlPatterns = "/delete")
-
-public class IdServlet extends HttpServlet {
-	public IdServlet() {
+@WebServlet(loadOnStartup = 1, urlPatterns = "/update")
+public class EmailServlet extends HttpServlet {
+	public EmailServlet() {
 		System.out.println("created no args IdServlet const");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter("id");
-		int convertedId = Integer.valueOf(id);
+		String email = req.getParameter("email");
+
 		CafeServiceImp cafeServiceImp = new CafeServiceImp();
-		int ref = cafeServiceImp.deleteDataById(convertedId);
-		if (ref > 0) {
-			System.out.println("id is " + id);
-			req.setAttribute("success", "id " + id + " is deleted");
-		} else {
-			System.err.println("id not found");
-			req.setAttribute("failure", "id not deleted");
-		}
+		String ref = cafeServiceImp.updateByEmail(email);
+
+		req.setAttribute("success", ref);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("name.jsp");
 		dispatcher.forward(req, resp);
 	}
