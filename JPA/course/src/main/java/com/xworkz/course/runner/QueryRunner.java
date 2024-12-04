@@ -16,11 +16,8 @@ public class QueryRunner {
 		EntityManagerFactory emf=Persistence.createEntityManagerFactory("com.xworkz");
 		EntityManager entityManager=emf.createEntityManager();
 		EntityTransaction et=entityManager.getTransaction();
-		/*Query query=entityManager.createNamedQuery("findByName");
-		Object object=query.getSingleResult();
-		CollegeDTO dto=(CollegeDTO)object;
-		System.out.println(dto.toString());*/
-		Query[] query=new Query[7];
+		
+	    Query[] query=new Query[7];
 		query[0]=entityManager.createNamedQuery("findByName");
 		query[1]=entityManager.createNamedQuery("findByEmail");
 		query[2]=entityManager.createNamedQuery("findByAddress");

@@ -6,7 +6,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="student_table")
+@Table(name="course_table")
 @NamedQuery(name="findByName" ,query="select cd from CourseDTO cd where cd.name='Spoorthi'")
 @NamedQuery(name="findByEmail" ,query="select cd from CourseDTO cd where cd.email='ammi@gmail.com'")
 @NamedQuery(name="findByPhone" ,query="select cd from CourseDTO cd where cd.phone=9731276272")
