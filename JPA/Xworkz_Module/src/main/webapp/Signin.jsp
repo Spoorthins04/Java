@@ -95,7 +95,7 @@ var filedName=document.getElementById("userName");
    var fieldValue=filedName.value;
 
       var xhttp=new XMLHttpRequest();
-        xhttp.open("GET","http://localhost:8081/xworkz_module/filedName/" + fieldValue,true);
+        xhttp.open("GET","http://localhost:8081/Xworkz_Module/filedName/" + fieldValue,true);
         xhttp.send();
 
         xhttp.onload = function() {
